@@ -10,6 +10,7 @@ import { ProductsService } from '../service/products.service';
 export class ProductsComponent implements OnInit {
 
   products: Product[] = []
+  productName = ""
 
   constructor(private productService: ProductsService) {
     this.products = this.productService.products

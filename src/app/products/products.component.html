@@ -1,12 +1,12 @@
 <div class="search-container" style="width: 30%; margin:auto">
   <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}">
     <button class="btn btn-outline-success"  style="width: 30%;" type="submit">Search</button>
   </form>
 </div>
 <div class="card-container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div *ngFor="let product of products" style="padding: 0;">
+      <div *ngFor="let product of products | searchProduct:productName" style="padding: 0;">
           <div class="col">
               <div class="card" >
                   <img src="../assets/placeholder_card_product.png" class="card-img-top" alt="...">
