@@ -1,0 +1,16 @@
+<div class="card-container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div *ngFor="let product of products" style="padding: 0;">
+          <div class="col">
+              <div class="card" >
+                  <img src="../assets/placeholder_card_product.png" class="card-img-top" alt="...">
+                  <div class="card-body">
+                      <h5 class="card-title">{{ product.name }}</h5>
+                      <p class="card-text">prezzo: {{ product.price }} $</p>
+                      <button type="button" class="btn btn-success">Add to cart</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
