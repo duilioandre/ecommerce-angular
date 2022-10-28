@@ -1,7 +1,6 @@
-<div class="search-container" style="width: 30%; margin:auto">
+<div class="search-container" style="width: 24%; margin:auto">
   <form class="d-flex" role="search">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}">
-    <button class="btn btn-outline-success"  style="width: 30%;" type="submit">Search</button>
   </form>
 </div>
 <div class="card-container">
@@ -12,11 +11,27 @@
                   <img src="../assets/placeholder_card_product.png" class="card-img-top" alt="...">
                   <div class="card-body">
                       <h5 class="card-title">{{ product.name }}</h5>
-                      <p class="card-text">prezzo: {{ product.price }} $</p>
+                      <p class="card-text">prezzo: {{ product.price  | currency:'EUR'}} </p>
                       <button type="button" class="btn btn-success">Add to cart</button>
+                      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">More details</button>
                   </div>
               </div>
           </div>
       </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
   </div>
 </div>
