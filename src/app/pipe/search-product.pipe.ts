@@ -6,9 +6,9 @@ import { Product } from '../model/product.model';
 })
 export class SearchProductPipe implements PipeTransform {
 
-  transform(products: Product[], productName: string): any{
-    if ( productName.length === 0 || productName === "" || productName === undefined) return products;
-    return products.filter(product => product.name.toLowerCase().includes(productName.toLowerCase()))
+  transform(products: Product[], productInputName: string): any{
+    if ( productInputName.length === 0 || productInputName === "" || productInputName === undefined) return products;
+    return products.filter(product => product.name.toLowerCase().includes(productInputName.toLowerCase()))
   }
 
 }

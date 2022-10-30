@@ -1,11 +1,12 @@
 <div class="search-container" style="width: 24%; margin:auto">
   <form class="d-flex" role="search">
-    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="productName" [ngModelOptions]="{standalone: true}">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="productInputName" [ngModelOptions]="{standalone: true}">
   </form>
 </div>
 <div class="card-container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div *ngFor="let product of products | searchProduct:productName" style="padding: 0;">
+      <div *ngFor="let product of products | searchProduct:productInputName" style="padding: 0;">
+        <app-modal [productName]="product.name"></app-modal>
           <div class="col">
               <div class="card" >
                   <img src="../assets/placeholder_card_product.png" class="card-img-top" alt="...">
@@ -20,3 +21,5 @@
       </div>
   </div>
 </div>
+
+
