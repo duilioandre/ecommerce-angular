@@ -6,15 +6,15 @@
 <div class="card-container">
   <div class="row row-cols-1 row-cols-md-3 g-4">
       <div *ngFor="let product of products | searchProduct:productInputName" style="padding: 0;">
-        <app-modal [productName]="product.name"></app-modal>
           <div class="col">
               <div class="card" >
                   <img src="../assets/placeholder_card_product.png" class="card-img-top" alt="...">
                   <div class="card-body">
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">prezzo: {{ product.price  | currency:'EUR'}} </p>
-                      <button type="button" class="btn btn-success">Add to cart</button>
-                      <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#exampleModal">More details</button>
+                      <button type="button" (click)="setProductNameSelected(product.name)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+                      <app-modal [productName]="productNameSelected"></app-modal>
+                      <button type="button" class="btn btn-info">More details</button>
                   </div>
               </div>
           </div>

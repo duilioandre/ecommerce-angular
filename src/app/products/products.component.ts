@@ -11,12 +11,17 @@ export class ProductsComponent implements OnInit {
 
   products: Product[] = []
   productInputName = ""
+  productNameSelected = ""
 
   constructor(private productService: ProductsService) {
     this.products = this.productService.products
    }
 
   ngOnInit(): void {
+  }
+
+  setProductNameSelected(pn: string){
+    this.productNameSelected = pn
   }
 
 }
