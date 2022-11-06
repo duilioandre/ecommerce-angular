@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../model/product.model';
 import { ProductsService } from '../service/products.service';
+import { CartService } from '../shared/service/cart.service';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +14,7 @@ export class ProductsComponent implements OnInit {
   productInputName = ""
   productNameSelected = ""
 
-  constructor(private productService: ProductsService) {
+  constructor(private productService: ProductsService, private cartService: CartService) {
     this.products = this.productService.products
    }
 
@@ -22,6 +23,10 @@ export class ProductsComponent implements OnInit {
 
   setProductNameSelected(pn: string){
     this.productNameSelected = pn
+  }
+
+  addToCart(product: Product){
+    this.cartService.addItemToCart(product)
   }
 
 }

@@ -12,7 +12,7 @@
                   <div class="card-body">
                       <h5 class="card-title">{{ product.name }}</h5>
                       <p class="card-text">prezzo: {{ product.price  | currency:'EUR'}} </p>
-                      <button type="button" (click)="setProductNameSelected(product.name)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
+                      <button type="button" (click)="setProductNameSelected(product.name); addToCart(product)" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add to cart</button>
                       <app-modal [productName]="productNameSelected"></app-modal>
                       <button type="button" class="btn btn-info" routerLink="/products/product/{{product.code}}">More details</button>
                   </div>
