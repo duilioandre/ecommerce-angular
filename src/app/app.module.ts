@@ -8,6 +8,7 @@ import { ProductsComponent } from './products/products.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SearchProductPipe } from './pipe/search-product.pipe';
 import { ModalComponent } from './modal/modal.component';
+import { ProductComponent } from './product/product.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModalComponent } from './modal/modal.component';
     ProductsComponent,
     NavbarComponent,
     SearchProductPipe,
-    ModalComponent
+    ModalComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
