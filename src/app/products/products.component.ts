@@ -18,15 +18,18 @@ export class ProductsComponent implements OnInit {
     this.products = this.productService.products
    }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
-  setProductNameSelected(pn: string){
-    this.productNameSelected = pn
+  setProductNameSelected(productName: string){
+    this.productNameSelected = productName
   }
 
   addToCart(product: Product){
     this.cartService.addItemToCart(product)
+  }
+
+  trackByProductCode(index: number, product: Product): string{
+    return product.code
   }
 
 }
